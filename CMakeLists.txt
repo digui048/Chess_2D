@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add dependencies
 find_package(SDL3 CONFIG REQUIRED)
+find_package(spdlog CONFIG REQUIRED)
 
 # No C++20 modules
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF) 
@@ -42,6 +43,7 @@ target_compile_definitions(Chess PRIVATE
 # Automatically links to these libs
 target_link_libraries(Chess PRIVATE
     SDL3::SDL3
+    spdlog::spdlog
 )
 
 # Add directories with any random loose .dlls or .libs here
@@ -58,7 +60,7 @@ if(MSVC)
         /ZI # program database for edit and continue
     )
 else()
-    target_compile_options(Playground PRIVATE 
+    target_compile_options(Chess PRIVATE 
         -Wall 
         -Wextra 
         -Wpedantic
