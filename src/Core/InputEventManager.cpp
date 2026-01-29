@@ -66,6 +66,10 @@ void InputEventManager::Update()
             if (event.button.button <= m_mouse.size())
                 m_mouse[event.button.button - 1] = KeyState::UP;
             break;
+
+        case SDL_EVENT_MOUSE_MOTION:
+            mousePos = {event.motion.x, event.motion.y};
+            break;
         }
     }
 }

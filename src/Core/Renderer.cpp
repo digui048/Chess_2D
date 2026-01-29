@@ -48,9 +48,9 @@ bool Renderer::DrawRectangle(const SDL_FRect &rect, Uint8 r, Uint8 g, Uint8 b, U
     SDL_FRect rec(rect);
     bool result = (filled) ? SDL_RenderFillRect(m_renderer, &rec) : SDL_RenderRect(m_renderer, &rec);
 
-    if(!result)
+    if (!result)
     {
-        Log::Warn("Cannot draw quad to screen. SDL_RenderFillRect error: %s", SDL_GetError());
+        Log::Warn("Cannot draw quad to screen. SDL_RenderFillRect error: {}", SDL_GetError());
         ret = false;
     }
 

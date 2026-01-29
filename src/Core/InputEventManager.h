@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Utils/Vector2D.h"
 #include <SDL3/SDL_events.h>
 #include <bitset>
 #include <vector>
@@ -25,6 +26,8 @@ public:
 
     KeyState GetKeyStatus(SDL_Scancode keycode) const;
     KeyState GetMouseButtonStatus(int mouseIndex) const;
+
+    Vector2D GetMousePosition() const { return mousePos; }
 
 private:
     template <size_t N>
@@ -53,4 +56,6 @@ private:
     std::array<KeyState, SDL_SCANCODE_COUNT> m_keyboard;
     std::array<KeyState, 5> m_mouse;
     std::unordered_map<std::string, bool> m_actions;
+
+    Vector2D mousePos = {0.0f, 0.0f};
 };

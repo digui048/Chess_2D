@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add dependencies
 find_package(SDL3 CONFIG REQUIRED)
+find_package(SDL3_image CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 
 # No C++20 modules
@@ -43,6 +44,7 @@ target_compile_definitions(Chess PRIVATE
 # Automatically links to these libs
 target_link_libraries(Chess PRIVATE
     SDL3::SDL3
+    SDL3_image::SDL3_image
     spdlog::spdlog
 )
 
