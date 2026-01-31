@@ -14,6 +14,8 @@ public:
 
     bool DrawRectangle(const SDL_FRect &rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool filled = true);
 
+    SDL_Renderer* GetRenderer() const { return m_renderer; }
+
 private:
     SDL_Renderer *m_renderer;
     SDL_Color background;

@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "TextureImporter.h"
 
 #include "Core/Assert.h"
 #include "Core/Log.h"

@@ -18,10 +18,10 @@ find_package(spdlog CONFIG REQUIRED)
 # No C++20 modules
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF) 
 
-# Playground executable
+# Chess executable
 add_executable(Chess)
 
-# Playground sources and headers
+# Chess sources and headers
 file(GLOB_RECURSE Chess_SOURCES CONFIGURE_DEPENDS 
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
@@ -31,9 +31,10 @@ file(GLOB_RECURSE Chess_SOURCES CONFIGURE_DEPENDS
 
 target_sources(Chess PRIVATE ${Chess_SOURCES})
 
-# Playground include dirs
+# Chess include dirs
 target_include_directories(Chess PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets
 )
 
 # Preprocessor defines
@@ -53,6 +54,13 @@ target_link_directories(Chess PRIVATE
   
 )
 
+add_custom_command(
+    TARGET Chess POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_CURRENT_SOURCE_DIR}/assets
+            $<TARGET_FILE_DIR:Chess>/assets
+)
+
 # Set configuration properties for Playground
 if(MSVC)
     target_compile_options(Chess PRIVATE
@@ -69,7 +77,7 @@ else()
     )
 endif()
 
-# Set Playground as the startup project
+# Set Chess as the startup project
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Chess)
 
 # Filters
