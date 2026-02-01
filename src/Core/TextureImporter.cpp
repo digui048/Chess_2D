@@ -40,5 +40,5 @@ SDL_Texture *const TextureImporter::LoadSurface(SDL_Surface *surface)
         Log::Warn("Unable to create texture from surface! SDL Error: {}", SDL_GetError());
     }
 
-    return NULL;
+    return texture;
 }

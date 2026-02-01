@@ -20,7 +20,10 @@ Application::Application()
     Log::Info("Window created successfully");
 
     m_renderer = new Renderer();
-    Log::Info("Renderer creted successfully");
+    Log::Info("Renderer created successfully");
+
+    m_scene = new Scene();
+    Log::Info("Scene created successfully");
 }
 
 Application::~Application()
@@ -32,6 +35,9 @@ Application::~Application()
 
     delete (m_window);
     m_window = nullptr;
+
+    delete (m_scene);
+    m_scene = nullptr;
 
     SDL_Quit();
 
@@ -62,6 +68,11 @@ void Application::ProcessEvents(InputEventManager &eventController)
 
 void Application::Run()
 {
+    //SDL_Texture *tex = TextureImporter::Load("assets/Textures/defaultTexture.png");
+
+    m_scene->CreateScene();
+    Log::Info("Scene created");
+
     while (m_running)
     {
         m_inputManager.Update();
@@ -69,9 +80,7 @@ void Application::Run()
 
         m_renderer->RenderClear();
 
-        // update render HERE!!!!!!!!
-        SDL_FRect rect = {0.0f, 0.0f, 100.0f, 100.0f};
-        m_renderer->DrawRectangle(rect, 255, 0, 255, 255);
+        m_scene->Update();
 
         m_renderer->SwapWindow();
     }

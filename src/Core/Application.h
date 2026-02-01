@@ -3,6 +3,7 @@
 #include "Core/Window.h"
 #include "Core/Renderer.h"
 #include "Core/InputEventManager.h"
+#include "Scene/Scene.h"
 #include <vector>
 
 class Application
@@ -29,6 +30,7 @@ private:
     Window *m_window = nullptr;
     Renderer *m_renderer = nullptr;
     InputEventManager m_inputManager;
+    Scene* m_scene = nullptr;
 
     bool m_running = true;
 };

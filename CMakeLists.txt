@@ -14,6 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(SDL3 CONFIG REQUIRED)
 find_package(SDL3_image CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
+find_package(pugixml CONFIG REQUIRED)
 
 # No C++20 modules
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF) 
@@ -47,6 +48,7 @@ target_link_libraries(Chess PRIVATE
     SDL3::SDL3
     SDL3_image::SDL3_image
     spdlog::spdlog
+    pugixml::pugixml
 )
 
 # Add directories with any random loose .dlls or .libs here

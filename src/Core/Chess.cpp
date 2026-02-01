@@ -1,7 +1,11 @@
 #include "Core/Application.h"
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
 
 int main()
 {
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     /*SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
     SDL_RenderClear(m_renderer);
 

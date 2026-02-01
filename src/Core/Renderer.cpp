@@ -56,3 +56,16 @@ bool Renderer::DrawRectangle(const SDL_FRect &rect, Uint8 r, Uint8 g, Uint8 b, U
 
     return ret;
 }
+
+bool Renderer::DrawTexture(SDL_Texture *tex, const SDL_FRect* srcRect, const SDL_FRect *sect)
+{
+    bool ret = true;
+
+    if (!SDL_RenderTexture(m_renderer, tex, srcRect, sect))
+    {
+        Log::Warn("Cannot draw texture to screen, SDL_Error: {}", SDL_GetError());
+        ret = false;
+    }
+
+    return ret;
+}
