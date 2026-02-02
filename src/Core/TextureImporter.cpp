@@ -17,6 +17,8 @@ SDL_Texture *const TextureImporter::Load(std::string path)
         SDL_DestroySurface(surface);
     }
 
+    SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);
+    
     return texture;
 }
 

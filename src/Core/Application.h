@@ -21,6 +21,8 @@ public:
     InputEventManager& GetInputManager() { return m_inputManager; }
     Renderer* GetRenderer() const { return m_renderer; }
 
+    inline int GetWindowScale() const { return m_window->GetScale(); }
+
 private:
     void ProcessEvents(InputEventManager &eventController);
 

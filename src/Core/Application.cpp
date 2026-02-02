@@ -3,6 +3,7 @@
 
 #include "Core/Assert.h"
 #include "Core/Log.h"
+#include <sstream>
 
 Application *Application::s_Instance = nullptr;
 
@@ -83,6 +84,11 @@ void Application::Run()
         m_scene->Update();
 
         m_renderer->SwapWindow();
+
+        std::stringstream ss;
+        ss << m_inputManager.GetMousePosition();
+
+        m_window->SetTitle(ss.str());
     }
 }
 

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="18" height="18" tilewidth="8" tileheight="8" infinite="0" nextlayerid="12" nextobjectid="81">
- <tileset firstgid="1" name="board_plain_03" tilewidth="8" tileheight="8" tilecount="324" columns="18">
-  <image source="board_plain_03.png" width="144" height="144"/>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="19" height="18" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="81">
+ <tileset firstgid="1" name="board_plain_03" tilewidth="32" tileheight="32" tilecount="342" columns="19">
+  <image source="board_plain_03.png" width="608" height="576"/>
  </tileset>
- <tileset firstgid="325" name="White_Pieces" tilewidth="8" tileheight="8" tilecount="24" columns="12">
-  <image source="WhitePieces.png" width="96" height="16"/>
- </tileset>
- <tileset firstgid="349" name="Black_Pieces" tilewidth="8" tileheight="8" tilecount="24" columns="12">
-  <image source="BlackPieces.png" width="96" height="16"/>
- </tileset>
- <layer id="9" name="Board" width="18" height="18">
+ <layer id="9" name="Board" width="19" height="18">
   <properties>
    <property name="Draw" value="true"/>
   </properties>
@@ -338,165 +332,183 @@
    <tile gid="322"/>
    <tile gid="323"/>
    <tile gid="324"/>
+   <tile gid="325"/>
+   <tile gid="326"/>
+   <tile gid="327"/>
+   <tile gid="328"/>
+   <tile gid="329"/>
+   <tile gid="330"/>
+   <tile gid="331"/>
+   <tile gid="332"/>
+   <tile gid="333"/>
+   <tile gid="334"/>
+   <tile gid="335"/>
+   <tile gid="336"/>
+   <tile gid="337"/>
+   <tile gid="338"/>
+   <tile gid="339"/>
+   <tile gid="340"/>
+   <tile gid="341"/>
+   <tile gid="342"/>
   </data>
  </layer>
  <objectgroup id="10" name="Pieces">
-  <object id="25" type="pawn" x="8" y="104" width="16" height="16">
+  <object id="25" type="pawn" x="32" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="27" type="pawn" x="24" y="104" width="16" height="16">
+  <object id="27" type="pawn" x="96" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="30" type="pawn" x="40" y="104" width="16" height="16">
+  <object id="30" type="pawn" x="160" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="31" type="pawn" x="56" y="104" width="16" height="16">
+  <object id="31" type="pawn" x="224" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="33" type="pawn" x="72" y="104" width="16" height="16">
+  <object id="33" type="pawn" x="288" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="35" type="pawn" x="88" y="104" width="16" height="16">
+  <object id="35" type="pawn" x="352" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="36" type="pawn" x="104" y="104" width="16" height="16">
+  <object id="36" type="pawn" x="416" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="38" type="pawn" x="120" y="104" width="16" height="16">
+  <object id="38" type="pawn" x="480" y="416" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="39" type="rook" x="8" y="120" width="16" height="16">
+  <object id="39" type="rook" x="32" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="41" type="knight" x="24" y="120" width="16" height="16">
+  <object id="41" type="knight" x="96" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="42" type="bishop" x="40" y="120" width="16" height="16">
+  <object id="42" type="bishop" x="160" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="43" type="queen" x="56" y="120" width="16" height="16">
+  <object id="43" type="queen" x="224" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="44" type="king" x="72" y="120" width="16" height="16">
+  <object id="44" type="king" x="288" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="45" type="bishop" x="88" y="120" width="16" height="16">
+  <object id="45" type="bishop" x="352" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="46" type="knight" x="104" y="120" width="16" height="16">
+  <object id="46" type="knight" x="416" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="47" type="rook" x="120" y="120" width="16" height="16">
+  <object id="47" type="rook" x="480" y="480" width="64" height="64">
    <properties>
     <property name="Color" value="white"/>
    </properties>
   </object>
-  <object id="65" type="pawn" x="8" y="24" width="16" height="16">
+  <object id="65" type="pawn" x="32" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="66" type="pawn" x="24" y="24" width="16" height="16">
+  <object id="66" type="pawn" x="96" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="67" type="pawn" x="40" y="24" width="16" height="16">
+  <object id="67" type="pawn" x="160" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="68" type="pawn" x="56" y="24" width="16" height="16">
+  <object id="68" type="pawn" x="224" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="69" type="pawn" x="72" y="24" width="16" height="16">
+  <object id="69" type="pawn" x="288" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="70" type="pawn" x="88" y="24" width="16" height="16">
+  <object id="70" type="pawn" x="352" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="71" type="pawn" x="104" y="24" width="16" height="16">
+  <object id="71" type="pawn" x="416" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="72" type="pawn" x="120" y="24" width="16" height="16">
+  <object id="72" type="pawn" x="480" y="96" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="73" type="rook" x="8" y="8" width="16" height="16">
+  <object id="73" type="rook" x="32" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="74" type="knight" x="24" y="8" width="16" height="16">
+  <object id="74" type="knight" x="96" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="75" type="bishop" x="40" y="8" width="16" height="16">
+  <object id="75" type="bishop" x="160" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="76" type="queen" x="56" y="8" width="16" height="16">
+  <object id="76" type="queen" x="224" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="77" type="king" x="72" y="8" width="16" height="16">
+  <object id="77" type="king" x="288" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="78" type="bishop" x="88" y="8" width="16" height="16">
+  <object id="78" type="bishop" x="352" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="79" type="knight" x="104" y="8" width="16" height="16">
+  <object id="79" type="knight" x="416" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>
   </object>
-  <object id="80" type="rook" x="120" y="8" width="16" height="16">
+  <object id="80" type="rook" x="480" y="32" width="64" height="64">
    <properties>
     <property name="Color" value="black"/>
    </properties>

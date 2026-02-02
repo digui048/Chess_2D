@@ -41,11 +41,17 @@ void Renderer::SwapWindow()
 bool Renderer::DrawRectangle(const SDL_FRect &rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool filled)
 {
     bool ret = true;
+    float scale = (float)Application::GetInstance().GetWindowScale();
 
     SDL_SetRenderDrawBlendMode(m_renderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(m_renderer, r, g, b, a);
 
     SDL_FRect rec(rect);
+    rec.x *= scale;
+    rec.y *= scale;
+    rec.w *= scale;
+    rec.h *= scale;
+
     bool result = (filled) ? SDL_RenderFillRect(m_renderer, &rec) : SDL_RenderRect(m_renderer, &rec);
 
     if (!result)
@@ -60,8 +66,18 @@ bool Renderer::DrawRectangle(const SDL_FRect &rect, Uint8 r, Uint8 g, Uint8 b, U
 bool Renderer::DrawTexture(SDL_Texture *tex, const SDL_FRect* srcRect, const SDL_FRect *sect)
 {
     bool ret = true;
+    float scale = (float)Application::GetInstance().GetWindowScale();
 
-    if (!SDL_RenderTexture(m_renderer, tex, srcRect, sect))
+    SDL_FRect scaleDst;
+    if (sect)
+    {
+        scaleDst.x = sect->x * scale;
+        scaleDst.y = sect->y * scale;
+        scaleDst.w = sect->w * scale;
+        scaleDst.h = sect->h * scale;
+    }
+
+    if (!SDL_RenderTexture(m_renderer, tex, srcRect, sect ? &scaleDst : nullptr))
     {
         Log::Warn("Cannot draw texture to screen, SDL_Error: {}", SDL_GetError());
         ret = false;
